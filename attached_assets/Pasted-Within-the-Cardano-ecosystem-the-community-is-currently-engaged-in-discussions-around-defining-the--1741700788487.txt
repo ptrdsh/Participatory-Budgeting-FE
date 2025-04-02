@@ -1,0 +1,26 @@
+Within the Cardano ecosystem, the community is currently engaged in discussions around defining the budget for 2025 via its newly established Governance model that was introduced in its most recent hardfork, which implements CIP1694 and allows anyone to ask the Treasury for funding via a Treasury Withdrawal Governance Action (GA). The delegate-approved constitution, which got enacted just last week, now demands every treasury withdrawal to follow after an approved Info Governance Action, defining the budget per an item in written. This first budget is quite important for the community, as it sets a precedence for the future. 
+An entity exists, Intersect, which set out to be the organiser of this decentralised governance, but they are being criticised for trying to do too much, and to try to control too much. They however managed to create a budget sheet, which serves a good first basis on the items that should get funding, which most DReps agree on, but disagree on the amounts for those items. 
+
+From this situation, the following idea was born, and I please need help implementing it. I tweeted the idea on X as below: 
+
+Programmatic Governance Actions for deciding budget items and their volumes in bulk to enable participatory budgeting empowered by Collective Intelligence [here was a reference to a paper on Collective Intelligence in politics]: 
+A (Budget/Info) Governance Action that contains a "poll", set up as smart contract with which only DReps can interact and which's outcome becomes the proposed content for the Governance Action. 
+
+To use the work that has already been put into the budget by countless people, the "poll" has pre-filled budget items with suggested amounts (basically the budget sheet [here was a reference to the budget sheet by Intersect]), but instead of voting yes/no, DReps vote how much ADA should be allocated per budget item, to silently and blindly decide on the amount collectively through medians/averages by collective intelligence. 
+-> Voting a zero "0" equals a DRep wanting the item removed, and voting the same, more than or less than suggested will result collectively in some sum. 
+
+The "poll" runs for 4 weeks, after which it locks down, and the budget items, and their collectively-and-blindly-decided upon amounts are published. This still leaves 2 weeks for actual GA voting with all info. DReps will likely vote on the GA after they are done with the poll, so 2 weeks is actually not too critically short, and would only serve as contingency period, in case the final results are a No-Go for some. The contract can receive donations, which get distributed to DReps per item they voted on, upon ratification of the GA. This could be scaled to the GA deposit being crowdsourced, and then distributed to DReps. 
+
+Thoughts, Problems and potential Mitigations: 
+- The items for Dreps to vote on are a final list that came from some collective of people, which is fenced/centralised in one form another... Instead of the Intersect budget sheet being the base for those pre-filled items, a phase 0 could be introduced to the smart contract before the Governance Action Submission, during which anyone can interact with it and suggest items and their budgets. This will likely get very messy tho, as early Catalyst showed. Without their moderation and strict rules, quality deteriorates quickly - Alternatively, DReps could also just be allowed to add items in the first week.. its in their own interest to make them high quality. 
+- Min thresholds are required to avoid items getting funded despite 51% of DReps voting zero. 
+- Trimming the extreme high 1% or introducing max deviations that move by weight, is necessary to avoid DReps attacking the average results (e.g. voting 1 billion ADA on one item) 
+- To lower high-staked DReps budget vote power, it can be subject of a function that includes more factors than delegated stake, such as DRep activity status, or historic activity, age, and/or combine that with minor quadratic effects of stake, et al.
+
+All commentators said itd be a very good, novel idea and wish this would exist. 
+Some users discussed the feasibility to do this onchain on L1, vs. the need to put this on Hydra, Cardanos L2. 
+There are currently about 850 DReps on Cardano, and about 150 budget items. 
+Ideally, id like to try to design this in a way that it would work on an or multiple L1 smart contracts written in Aiken, without Hydra. 
+It needs a web app with a wallet connector to Cardano wallets like eternl, yoroi, nufi, etc. for Dreps to login and vote on the amounts. The web app shows the budget items, and allows Dreps to login and vote on the amounts. 
+
+Before we dive into coding, lets define a plan, analyse problems and design the system and all interactions. How would you tackle the task and do you think its feasible onchain?
